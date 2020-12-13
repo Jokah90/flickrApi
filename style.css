@@ -1,17 +1,20 @@
 body {
     background-color: #eee;
-}
-
-.logo {
-    width: 5em;
-    margin: -1em;   
-}
-
-.container {
     width: 100%;
     height: 100vh;
     background-color: #fff;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 5em;
+    margin: 1em;   
+}
+
+.logo img {
+    width: 50%;
 }
 
 .hero-bg { 
@@ -65,10 +68,6 @@ h1 span::before {
     z-index: -1;
 }
 
-img {
-    width: 50%;
-}
-
 .overlay {
     position: absolute;
     height: 100% vh;
@@ -77,9 +76,11 @@ img {
     z-index: 1;
     place-content: center;
     color: white;
-    display: grid;
     display: none;
- 
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
 }
 
 .form-container {
@@ -124,17 +125,28 @@ img {
     transition: 0.3s ease-in;
  }
 
- .grid-gallery {
-     display: grid;
-     grid-template-columns: repeat(2,1fr);
-     grid-template-areas: 
-            "images"
- }
+ main {
+    width: 100% ;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
 
-.images {
-     grid-area: image;
- }
- 
+main article figure {
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+main article figure img {
+    width: 6rem;
+}
+
+ /* ANIMATIONS */
 .top, h1, span {
      animation: fadeIn 2.6s forwards;
  }
@@ -144,17 +156,63 @@ img {
 }
 
 @keyframes fadeIn {
-     from {
+    from {
         opacity: 0;
         transform: translateY(-2em);
-     }
      }to {
          opacity: 1;
          transform: translateY(1);
      }
+}
+    
  
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+   
+@media (min-width: 730px) {
 
+    .search {
+        width: 40%;
+        margin-left: 6em;
+    }
 
+    .button {
+        width: 20%;
+        margin-right: 8em;
+     }
+}
+
+@media (min-width: 930px) {
+
+    .form-container {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    
+    }
+
+    .search {
+        width: 25%;
+        margin: 0;
+    }
+
+    .button {
+        width: 10%;
+        margin: 0;
+     }
+}
 
 
 
