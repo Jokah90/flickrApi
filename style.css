@@ -8,6 +8,10 @@ body, html {
     padding: 0;
 }
 
+.wrapper {
+    box-sizing: border-box;
+}
+
 .logo {
     display: flex;
     flex-direction: row;
@@ -71,7 +75,7 @@ h1 span::before {
 
 .overlay {
     position: absolute;
-    height: 100% vh;
+    height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, .9);
     z-index: 1;
@@ -80,6 +84,13 @@ h1 span::before {
     display: none;
     opacity: 0;
     pointer-events: none; /* Gör så att det inte går att klicka på elementet */
+}
+
+#img {
+    position: absolute;
+    background: rgba(0, 0, 0, .9);
+    place-content: center;
+    color: white;
 }
 
 .animate-overlay {
@@ -128,10 +139,11 @@ h1 span::before {
     transition: 0.3s ease-in;
  }
 
- #overlay {
+ /* #overlay { 
     width: 100% ;
     height: 100%;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3,1fr);
     margin: 0;
     padding: 0;
@@ -142,7 +154,7 @@ h1 span::before {
     justify-content: end;
     align-items: center;
 }
-#overlay article figure {
+#overlay figure {
    margin: 0;
    padding: 0;
 }
@@ -151,10 +163,10 @@ h1 span::before {
     width: 7rem;
     height: 7rem;
     border-radius: 20px;
-    margin-left: 2em;
+    margin-left: 1em;
     padding: 1em;
 }
-
+*/
 .exit-button {
     background: none;
     border: none;
@@ -221,17 +233,12 @@ h1 span::before {
      #overlay {
         width: 100% ;
         height: 100%;
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(1,1fr);
         margin: 0;
         padding: 0;
     }
-    
-    #overlay img{
-        background: #3187a3;
-    }
-   
-    
     #overlay article figure img {
         width: 10rem;
         height: 10rem;
